@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Latihan Kalkulator</title>
+    </head>
+    <script>
+        let angka1;
+        let angka2;
+        let pilihan;
+
+        function operasi(pilihan){
+                    var metode ;
+        
+                    if(pilihan == "A"){
+                        metode = "A";
+                    }else if(pilihan == "B"){
+                        metode = "B";   
+                    }else if(pilihan == "C"){
+                        metode = "C";
+                    }else if(pilihan == "D"){
+                        metode = "D"; 
+                    }else{
+                        metode = "Pilih metode yang akan digunakan!";
+                    }
+                    return metode;
+                }
+
+                function proses(){
+                    pilihan = document.getElementById('pilihan').value;
+                    metode = operasi(pilihan);
+                    var angka1 =parseInt(document.getElementById('angka1').value);
+                    var angka2 =parseInt(document.getElementById('angka2').value);
+                    var hasil;
+                    if( metode == "A"){
+                        hasil = angka1 + angka2;
+                    }
+                    else if (metode == "B") {
+                        hasil = angka1 - angka2;
+                    }
+                    else if (metode == "C") {
+                        hasil = angka1 * angka2;
+                    }
+                    else if (metode == "D") {
+                        hasil = angka1 / angka2;
+                    }
+                    else{
+                        hasil ="Pilih Metode Yang Akan Digunakan!";
+                    }
+                    alert('Hasil perhitungannya adalah :' + [hasil])
+                }
+    </script>
+
+    <body style="text-align: center;">
+        <h1>Kalkulator Sederhana</h1>
+        <h2 style="color: red;">By : Mei Ayuningsari</h2>
+    <input type="number" id="angka1" placeholder="angka pertama">
+    <select id="pilihan" class="select" onchange="operasi()">
+        <option value="-" selected>Pilih</option>
+        <option value="A"> + </option>
+        <option value="B"> - </option>
+        <option value="C"> x </option>
+        <option value="D"> : </option>
+    </select>
+        
+    <input type="number" id="angka2" placeholder="angka kedua">
+    <br>
+    <hr>
+    <button onclick="proses()">
+        Hitung
+    </button>
+    </body>
+</html>
